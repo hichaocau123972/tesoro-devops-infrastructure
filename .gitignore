@@ -1,0 +1,76 @@
+# Azure deployment artifacts
+deployment-output*.json
+*.bacpac
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Environment variables
+.env
+.env.local
+*.local
+
+# Secrets
+secrets/
+*.pem
+*.key
+*.crt
+*.pfx
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build outputs
+bin/
+obj/
+dist/
+build/
+
+# Node modules (if using any JS tooling)
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+
+# Bicep compiled files (optional - some keep these)
+# *.json from bicep compile
+
+# Local testing
+test-results/
+coverage/
+
+# Backup files
+*.bak
+*backup*
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
