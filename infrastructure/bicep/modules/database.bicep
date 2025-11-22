@@ -55,24 +55,14 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2023-05-01-preview' = {
   name: sqlDatabaseName
   location: location
   tags: tags
-  sku: environment == 'production' ? {
-    name: 'HS_Gen5_4'
-    tier: 'Hyperscale'
-    family: 'Gen5'
-    capacity: 4
-  } : {
-    name: 'GP_S_Gen5_2'
-    tier: 'GeneralPurpose'
-    family: 'Gen5'
-    capacity: 2
+  sku: {
+    name: 'Basic'
+    tier: 'Basic'
   }
   properties: {
     collation: 'SQL_Latin1_General_CP1_CI_AS'
     catalogCollation: 'SQL_Latin1_General_CP1_CI_AS'
-    maxSizeBytes: environment == 'production' ? 1099511627776 : 32212254720 // 1TB for prod, 30GB for dev/staging
-    zoneRedundant: environment == 'production' ? true : false
-    readScale: environment == 'production' ? 'Enabled' : 'Disabled'
-    requestedBackupStorageRedundancy: environment == 'production' ? 'Geo' : 'Local'
+    maxSizeBytes: 2147483648 // 2GB for Basic tier
   }
 }
 
@@ -107,11 +97,8 @@ resource postgresServer 'Microsoft.DBforPostgreSQL/flexibleServers@2023-03-01-pr
   name: postgresServerName
   location: location
   tags: tags
-  sku: environment == 'production' ? {
-    name: 'Standard_D4s_v3'
-    tier: 'GeneralPurpose'
-  } : {
-    name: 'Standard_B2s'
+  sku: {
+    name: 'Standard_B1ms'
     tier: 'Burstable'
   }
   properties: {
@@ -119,20 +106,14 @@ resource postgresServer 'Microsoft.DBforPostgreSQL/flexibleServers@2023-03-01-pr
     administratorLoginPassword: postgresAdminPassword
     version: '15'
     storage: {
-      storageSizeGB: environment == 'production' ? 512 : 128
-      autoGrow: 'Enabled'
+      storageSizeGB: 32
     }
     backup: {
-      backupRetentionDays: environment == 'production' ? 35 : 7
-      geoRedundantBackup: environment == 'production' ? 'Enabled' : 'Disabled'
+      backupRetentionDays: 7
+      geoRedundantBackup: 'Disabled'
     }
-    highAvailability: environment == 'production' ? {
-      mode: 'ZoneRedundant'
-    } : {
+    highAvailability: {
       mode: 'Disabled'
-    }
-    network: {
-      publicNetworkAccess: 'Disabled'
     }
   }
 }
@@ -146,28 +127,7 @@ resource postgresDatabase 'Microsoft.DBforPostgreSQL/flexibleServers/databases@2
   }
 }
 
-// PostgreSQL Private Endpoint
-resource postgresPrivateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
-  name: '${postgresServerName}-pe'
-  location: location
-  tags: tags
-  properties: {
-    subnet: {
-      id: privateEndpointSubnetId
-    }
-    privateLinkServiceConnections: [
-      {
-        name: '${postgresServerName}-connection'
-        properties: {
-          privateLinkServiceId: postgresServer.id
-          groupIds: [
-            'postgresqlServer'
-          ]
-        }
-      }
-    ]
-  }
-}
+// PostgreSQL Private Endpoint removed for simplicity on free tier
 
 // Azure Cache for Redis
 var redisName = '${appName}-${environment}-redis-${uniqueSuffix}'

@@ -87,33 +87,7 @@ resource containerAppsKvSecretsUser 'Microsoft.Authorization/roleAssignments@202
   }
 }
 
-// Diagnostic Settings for Key Vault
-resource keyVaultDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
-  scope: keyVault
-  name: 'default'
-  properties: {
-    logs: [
-      {
-        categoryGroup: 'allLogs'
-        enabled: true
-        retentionPolicy: {
-          enabled: true
-          days: environment == 'production' ? 365 : 90
-        }
-      }
-    ]
-    metrics: [
-      {
-        category: 'AllMetrics'
-        enabled: true
-        retentionPolicy: {
-          enabled: true
-          days: environment == 'production' ? 365 : 90
-        }
-      }
-    ]
-  }
-}
+// Diagnostic Settings for Key Vault - removed for initial deployment simplicity
 
 // Sample secrets (placeholder - actual values should be set via deployment pipeline)
 resource sqlConnectionStringSecret 'Microsoft.KeyVault/vaults/secrets@2023-02-01' = {
