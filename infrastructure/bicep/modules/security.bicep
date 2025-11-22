@@ -15,8 +15,8 @@ param uniqueSuffix string
 @description('Resource tags')
 param tags object
 
-// Key Vault
-var keyVaultName = '${appName}-${environment}-kv-${uniqueSuffix}'
+// Key Vault (name must be 3-24 chars, so use shorter suffix)
+var keyVaultName = '${appName}${environment}kv${take(uniqueSuffix, 8)}'
 
 resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
   name: keyVaultName

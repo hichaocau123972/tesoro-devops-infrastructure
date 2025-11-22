@@ -55,20 +55,20 @@ resource vnet 'Microsoft.Network/virtualNetworks@2023-05-01' = {
       {
         name: 'container-apps-subnet'
         properties: {
-          addressPrefix: cidrSubnet(vnetAddressPrefix, 23, 1)
+          addressPrefix: cidrSubnet(vnetAddressPrefix, 24, 1)
         }
       }
       {
         name: 'private-endpoints-subnet'
         properties: {
-          addressPrefix: cidrSubnet(vnetAddressPrefix, 24, 3)
+          addressPrefix: cidrSubnet(vnetAddressPrefix, 24, 2)
           privateEndpointNetworkPolicies: 'Disabled'
         }
       }
       {
         name: 'gateway-subnet'
         properties: {
-          addressPrefix: cidrSubnet(vnetAddressPrefix, 24, 4)
+          addressPrefix: cidrSubnet(vnetAddressPrefix, 24, 3)
         }
       }
     ]
