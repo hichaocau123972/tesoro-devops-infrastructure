@@ -10,15 +10,15 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Infrastructure Components](#infrastructure-components)
-- [Getting Started](#getting-started)
-- [Deployment](#deployment)
-- [Cost Optimization](#cost-optimization)
-- [Security](#security)
-- [Monitoring](#monitoring)
-- [Documentation](#documentation)
+- [Overview](#-overview)
+- [Architecture](#️-architecture)
+- [Infrastructure Components](#-infrastructure-components)
+- [Getting Started](#-getting-started)
+- [Deployment](#-deployment)
+- [Cost Optimization](#-cost-optimization)
+- [Security](#-security)
+- [Monitoring](#-monitoring)
+- [Documentation](#-documentation)
 
 ---
 
