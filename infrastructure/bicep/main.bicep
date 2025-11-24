@@ -15,10 +15,13 @@ param environment string
 param location string = 'eastus'
 
 @description('Secondary region for geo-replication')
-param secondaryLocation string = 'westus2'
+param secondaryLocation string = 'eastus2'
 
 @description('Application name prefix')
 param appName string = 'tesoro'
+
+@description('Optional: Use existing resource group instead of creating new one')
+param useExistingResourceGroup bool = false
 
 @description('Tags to apply to all resources')
 param tags object = {
@@ -65,7 +68,10 @@ module security './modules/security.bicep' = {
   }
 }
 
-// Deploy database module
+// Deploy database module - DISABLED: SQL/PostgreSQL provisioning restricted
+// Requires quota increase request even on Pay-As-You-Go
+// Re-enable after quota approval
+/*
 module database './modules/database.bicep' = {
   scope: resourceGroup
   name: 'database-deployment'
@@ -82,6 +88,7 @@ module database './modules/database.bicep' = {
     networking
   ]
 }
+*/
 
 // Deploy storage module
 module storage './modules/storage.bicep' = {
@@ -134,5 +141,5 @@ output resourceGroupName string = resourceGroup.name
 output vnetId string = networking.outputs.vnetId
 output keyVaultName string = security.outputs.keyVaultName
 output appServiceName string = compute.outputs.appServiceName
-output databaseServerName string = database.outputs.serverName
+// output databaseServerName string = database.outputs.serverName // DISABLED: Database module commented out
 output logAnalyticsWorkspaceId string = monitoring.outputs.logAnalyticsWorkspaceId

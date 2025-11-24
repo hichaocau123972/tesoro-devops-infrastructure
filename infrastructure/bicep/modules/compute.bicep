@@ -40,8 +40,8 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2023-01-01' = {
     tier: 'PremiumV3'
     capacity: 2
   } : {
-    name: 'B2'
-    tier: 'Basic'
+    name: 'S1'
+    tier: 'Standard'
     capacity: 1
   })
   kind: 'linux'
