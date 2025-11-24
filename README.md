@@ -139,7 +139,7 @@ This repository contains the complete Azure infrastructure for **Tesoro XP**, a 
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR-USERNAME/tesoro-devops-infrastructure.git
+git clone https://github.com/sdrandr/tesoro-devops-infrastructure.git
 cd tesoro-devops-infrastructure
 
 # Login to Azure
@@ -299,7 +299,7 @@ This project was created as a portfolio demonstration of Azure DevOps engineerin
 
 **Dennis Brady**
 Email: dennis.brady@skyeluxtechnology.com
-LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+LinkedIn: [Dennis Brady LinkedIn](https://www.linkedin.com/in/dennis-brady-0aa8761/)
 
 ---
 
